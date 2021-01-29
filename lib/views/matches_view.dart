@@ -3,6 +3,8 @@ import 'package:sport_games/data_models/matches_data.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 
 import '../styles/styles.dart';
+import '../data_models/matches_data.dart';
+import '../data_models/games_data.dart';
 
 class MatchesListView extends StatefulWidget {
   _MatchesListViewState createState() => _MatchesListViewState();

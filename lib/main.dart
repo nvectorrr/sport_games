@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-//import 'package:page_transition/page_transition.dart';
+import 'package:page_transition/page_transition.dart';
 
 import 'styles/styles.dart';
-import 'routes/routes.dart';
+//import 'routes/routes.dart';
 import 'data_models/games_data.dart';
 import 'data_models/matches_data.dart';
-//import 'views/games_view.dart';
-//import 'views/matches_view.dart';
+import 'views/games_view.dart';
+import 'views/matches_view.dart';
 
 void main() {
   runApp(MyApp());
@@ -22,6 +22,7 @@ class MyApp extends StatelessWidget {
     games.add(Game('Basketball'));
   }
 
+  /*
   void _setMatches() {
     matches.add(Match(
         'Zenith', 'Arsenal', Game('Football'), 1, 3, '14:00', '1h 50min'));
@@ -40,6 +41,7 @@ class MyApp extends StatelessWidget {
     matches.add(Match('Carolina Panthers', 'Baltimore Ravens', Game('Football'),
         1, 0, '14:00', '1h 50min'));
   }
+  */
 
   @override
   Widget build(BuildContext context) {
@@ -47,14 +49,13 @@ class MyApp extends StatelessWidget {
     games.clear();
     matches.clear();
     _setGames();
-    _setMatches();
+    //_setMatches();
     return MaterialApp(
-      routes: appRoute,
-      initialRoute: '/games_list',
-      //home: GamesListView(),
+      //routes: appRoute,
+      //initialRoute: '/games_list',
+      home: GamesListView(),
       theme: kTheme,
       debugShowCheckedModeBanner: false,
-      /*
       onGenerateRoute: (settings) {
         switch (settings.name) {
           case '/games_list':
@@ -63,15 +64,14 @@ class MyApp extends StatelessWidget {
             break;
           case '/matches_list':
             return PageTransition(
-                child: MatchesListView(),
-                type: PageTransitionType.scale,
-                alignment: Alignment.center);
+              child: MatchesListView(),
+              type: PageTransitionType.rightToLeftWithFade,
+            );
             break;
           default:
             return null;
         }
       },
-      */
     );
   }
 }
